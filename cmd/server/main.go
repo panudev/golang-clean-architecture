@@ -8,10 +8,9 @@ import (
 	"github.com/gin-gonic/gin"
 	godotenv "github.com/joho/godotenv"
 
+	bootstrap "github.com/panudev/golang-clean-architecture/internal/bootstrap"
 	"github.com/panudev/golang-clean-architecture/internal/infrastructure/mysql"
-	"github.com/panudev/golang-clean-architecture/internal/interface/handler"
 	"github.com/panudev/golang-clean-architecture/internal/interface/route"
-	"github.com/panudev/golang-clean-architecture/internal/usecase"
 	"github.com/panudev/golang-clean-architecture/pkg/config"
 	"github.com/panudev/golang-clean-architecture/pkg/logger"
 )
@@ -30,9 +29,7 @@ func main() {
 
 	// Setup DB connection
 	dbConn := mysql.NewMySQLConnection(appConfig)
-	userRepo := mysql.NewUserRepo(dbConn)
-	userUseCase := usecase.NewUserUseCase(userRepo)
-	userHandler := handler.NewUserHandler(userUseCase)
+	userHandler := bootstrap.InitializeUserHandler(dbConn, appConfig)
 
 	// Setup Gin router
 	router := gin.Default()

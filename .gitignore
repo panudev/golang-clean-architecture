@@ -46,3 +46,6 @@ dist/
 
 # Air live reload
 tmp/ 
+
+# Wire generated files
+**/wire_gen.go
