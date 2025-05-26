@@ -97,7 +97,7 @@ The application uses environment variables for configuration. Key configurations
 - [GORM](https://gorm.io/) - ORM library
 - [Swagger](https://github.com/swaggo/swag) - API documentation
 - [Zap](https://github.com/uber-go/zap) - Logging
-- [Viper](https://github.com/spf13/viper) - Configuration management
+- [dotenv](https://github.com/joho/godotenv) - Environment variables
 - [Wire](https://github.com/google/wire) - Dependency injection
 
 ## 🤝 Contributing
@@ -111,10 +111,6 @@ The application uses environment variables for configuration. Key configurations
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors
-
-- Your Name - Initial work
 
 ## 🙏 Acknowledgments
 
