@@ -1,8 +1,10 @@
 package domain
 
 type User struct {
-	ID   uint   `json:"id"`
-	Name string `json:"name"`
+	ID       uint
+	Name     string
+	Email    string
+	Password string
 }
 
 type UserRepository interface {
