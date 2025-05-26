@@ -10,6 +10,6 @@ func NewUserUseCase(r domain.UserRepository) *UserUseCase {
 	return &UserUseCase{repo: r}
 }
 
-func (u *UserUseCase) GetUser(id uint) (*domain.User, error) {
-	return u.repo.GetByID(id)
+func (userUseCase *UserUseCase) GetUser(id uint) (*domain.User, error) {
+	return userUseCase.repo.GetByID(id)
 }
